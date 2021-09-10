@@ -37,7 +37,7 @@ public class CustomerDTO {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return String.format("고객ID: %d, 고객 이름: %s, 주소: %d, 연락처: %d", custId, custName, address, phone);
+		return String.format("고객ID: %d, 고객 이름: %s, 주소: %s, 연락처: %s", custId, custName, address, phone);
 	}
 	
 

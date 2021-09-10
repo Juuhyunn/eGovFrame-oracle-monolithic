@@ -9,5 +9,9 @@ import shop.jarviis.oracle.customer.domain.CustomerDTO;
 @Repository
 public interface CustomerMapper {
 	public List<CustomerDTO> findAll();
+	public CustomerDTO findById(int custId);
+	public List<CustomerDTO> findByCustName(String custName);
+	public List<CustomerDTO> findByAddress(String address);
+	public List<CustomerDTO> findByPhone(String phone);
 
 }

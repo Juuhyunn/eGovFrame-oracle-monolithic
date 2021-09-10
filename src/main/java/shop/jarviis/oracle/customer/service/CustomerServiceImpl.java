@@ -16,5 +16,25 @@ public class CustomerServiceImpl implements CustomerService{
 		// TODO Auto-generated method stub
 		return customerMapper.findAll();
 	}
+	@Override
+	public CustomerDTO findById(int custId) {
+		// TODO Auto-generated method stub
+		return customerMapper.findById(custId);
+	}
+	@Override
+	public List<CustomerDTO> findByCustName(String custName) {
+		// TODO Auto-generated method stub
+		return customerMapper.findByCustName(custName);
+	}
+	@Override
+	public List<CustomerDTO> findByAddress(String address) {
+		// TODO Auto-generated method stub
+		return customerMapper.findByAddress(address);
+	}
+	@Override
+	public List<CustomerDTO> findByPhone(String phone) {
+		// TODO Auto-generated method stub
+		return customerMapper.findByPhone(phone);
+	}
 
 }

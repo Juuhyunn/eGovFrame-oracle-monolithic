@@ -9,5 +9,41 @@
 	    phone
 	from customers 
 	</select>
+	<select id="findById" resultType="shop.jarviis.oracle.customer.domain.CustomerDTO" parameterType="int">
+	select 
+	    cust_id custId,
+	    cust_name custName,
+	    address,
+	    phone
+	from customers where cust_id like ${custId}
+	
+	</select>
+	<select id="findByCustName" resultType="shop.jarviis.oracle.customer.domain.CustomerDTO" parameterType="string">
+	select 
+	    cust_id custId,
+	    cust_name custName,
+	    address,
+	    phone
+	from customers where cust_name like '%' || #{value} || '%'
+	
+	</select>
+	<select id="findByAddress" resultType="shop.jarviis.oracle.customer.domain.CustomerDTO" parameterType="string">
+	select 
+	    cust_id custId,
+	    cust_name custName,
+	    address,
+	    phone
+	from customers where address like '%' || #{value} || '%'
+	
+	</select>
+	<select id="findByPhone" resultType="shop.jarviis.oracle.customer.domain.CustomerDTO" parameterType="string">
+	select 
+	    cust_id custId,
+	    cust_name custName,
+	    address,
+	    phone
+	from customers where phone like '%' || #{value} || '%'
+	
+	</select>
 
 </mapper>

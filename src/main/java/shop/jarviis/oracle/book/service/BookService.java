@@ -10,5 +10,8 @@ import shop.jarviis.oracle.book.domain.BookDTO;
 public interface BookService {
 	public List<BookDTO> findAll();
 	public BookDTO findById(int bookId);
+	public List<BookDTO> findByPubId(int pubId);
+	public List<BookDTO> findByBookTitle(String bookTitle);
+	public List<BookDTO> findByPrice(int price);
 
 }

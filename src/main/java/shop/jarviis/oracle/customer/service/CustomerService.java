@@ -9,4 +9,8 @@ import shop.jarviis.oracle.customer.domain.CustomerDTO;
 @Component
 public interface CustomerService {
 	public List<CustomerDTO> findAll();
+	public CustomerDTO findById(int custId);
+	public List<CustomerDTO> findByCustName(String custName);
+	public List<CustomerDTO> findByAddress(String address);
+	public List<CustomerDTO> findByPhone(String phone);
 }

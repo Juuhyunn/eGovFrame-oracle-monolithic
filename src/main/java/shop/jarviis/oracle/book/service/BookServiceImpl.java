@@ -21,5 +21,20 @@ public class BookServiceImpl implements BookService{
 		// TODO Auto-generated method stub
 		return bookMapper.findById(bookId);
 	}
+	@Override
+	public List<BookDTO> findByPubId(int pubId) {
+		// TODO Auto-generated method stub
+		return bookMapper.findByPubId(pubId);
+	}
+	@Override
+	public List<BookDTO> findByBookTitle(String bookTitle) {
+		// TODO Auto-generated method stub
+		return bookMapper.findByBookTitle(bookTitle);
+	}
+	@Override
+	public List<BookDTO> findByPrice(int price) {
+		// TODO Auto-generated method stub
+		return bookMapper.findByPrice(price);
+	}
 
 }
