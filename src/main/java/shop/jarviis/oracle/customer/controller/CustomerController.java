@@ -12,6 +12,7 @@ import shop.jarviis.oracle.customer.service.CustomerService;
 
 
 @Controller
+@RequestMapping("/customers")
 public class CustomerController {
 	@Autowired CustomerService customerService;
 	@RequestMapping("/customers")
@@ -48,5 +49,14 @@ public class CustomerController {
 		}
 	}
 	
+	
+	@RequestMapping("/join")
+	public String join() {
+		return "회원가입 성공";
+	}
+	@RequestMapping("/login")
+	public String login() {
+		return "로그인 성공";
+	}
 
 }
