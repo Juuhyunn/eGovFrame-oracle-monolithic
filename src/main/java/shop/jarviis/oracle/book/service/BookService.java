@@ -13,5 +13,6 @@ public interface BookService {
 	public List<BookDTO> findByPubId(int pubId);
 	public List<BookDTO> findByBookTitle(String bookTitle);
 	public List<BookDTO> findByPrice(int price);
+	public void save(BookDTO bookDTO);
 
 }

@@ -48,4 +48,11 @@ public class OrderServiceImpl implements OrderService{
 		return orderMapper.findByOrderDate(orderDate);
 	}
 
+	@Override
+	public void save(OrderDTO orderDTO) {
+		// TODO Auto-generated method stub
+		orderMapper.save(orderDTO);
+		
+	}
+
 }

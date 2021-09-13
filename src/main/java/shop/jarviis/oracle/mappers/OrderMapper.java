@@ -14,6 +14,7 @@ public interface OrderMapper {
 	public List<OrderDTO> findByBookId(int bookId);
 	public List<OrderDTO> findByOrderPrice(int orderPrice);
 	public List<OrderDTO> findByOrderDate(String orderDate);
+	public void save(OrderDTO orderDTO);
 	
 
 }

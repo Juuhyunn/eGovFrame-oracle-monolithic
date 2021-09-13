@@ -70,22 +70,22 @@ span.psw {
 </head>
 <body>
 
-<h2>Join Form</h2>
+<h2>AddPublisher Form</h2>
 
-<form action="${contextPath}/customers/join " method="post">
+<form action="${contextPath}/pubs/addPub " method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="custId"><b>custId</b></label>
-    <input type="text" placeholder="Enter custId" name="custId" required>
+    <label for="pubId"><b>pubId</b></label>
+    <input type="text" placeholder="Enter pubId" name="pubId" required>
 
-    <label for="custName"><b>custName</b></label>
-    <input type="text" placeholder="Enter custName" name="custName" required>
+    <label for="pubName"><b>pubName</b></label>
+    <input type="text" placeholder="Enter pubName" name="pubName" required>
     
-    <label for="address"><b>address</b></label>
-    <input type="text" placeholder="Enter address" name="address" required>
+    <label for="mgrName"><b>mgrName</b></label>
+    <input type="text" placeholder="Enter mgrName" name="mgrName" required>
 
     <label for="phone"><b>phone</b></label>
     <input type="text" placeholder="Enter phone" name="phone" required>

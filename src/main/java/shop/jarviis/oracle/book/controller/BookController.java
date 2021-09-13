@@ -6,13 +6,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import lombok.Getter;
 import shop.jarviis.oracle.book.domain.BookDTO;
 import shop.jarviis.oracle.book.service.BookService;
 
 @Controller
+@RequestMapping("/books")
 public class BookController {
 	@Autowired BookService bookService;
+	@Autowired BookDTO bookDTO;
 	@RequestMapping("/books")	
 	public void findAll() {
 		List<BookDTO> list = bookService.findAll();
@@ -46,6 +51,24 @@ public class BookController {
 		for(BookDTO b : list) {
 			System.out.println(b.toString());
 		}
+	}
+	@RequestMapping(value="/addBook", method= {RequestMethod.POST})
+	public String addBook(
+			@RequestParam("bookId") int bookId,
+			@RequestParam("bookTitle") String bookTitle,
+			@RequestParam("price") int price,
+			@RequestParam("pubId") int pubId) {
+		System.out.println("bookId : "+ bookId);
+		System.out.println("bookTitle : "+ bookTitle);
+		System.out.println("price : "+ price);
+		System.out.println("pubId : "+ pubId);
+		bookDTO.setBookId(bookId);
+		bookDTO.setBookTitle(bookTitle);
+		bookDTO.setPrice(price);
+		bookDTO.setPubId(pubId);
+		bookService.save(bookDTO);
+		return "/book/addBook";
+		
 	}
 
 }

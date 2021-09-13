@@ -42,4 +42,10 @@ public class PublisherServiceImpl implements PublisherService{
 		return publisherMapper.findByPhone(phone);
 	}
 
+	@Override
+	public void save(PublisherDTO publisherDTO) {
+		// TODO Auto-generated method stub
+		publisherMapper.save(publisherDTO);
+	}
+
 }

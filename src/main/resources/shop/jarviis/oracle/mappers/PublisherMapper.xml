@@ -41,6 +41,11 @@
 		phone
 		from publishers where phone like '%' || #{value} || '%'
 	</select>
+	<insert id="save" parameterType="shop.jarviis.oracle.publisher.domain.PublisherDTO">
+	insert into
+		publishers(pub_id, pub_name, mgr_name, phone)
+		values (${pubId}, #{pubName}, #{mgrName}, #{phone})
+	</insert>
 
 
 </mapper>

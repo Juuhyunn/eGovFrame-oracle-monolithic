@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import shop.jarviis.oracle.customer.domain.CustomerDTO;
 import shop.jarviis.oracle.customer.service.CustomerService;
@@ -15,6 +17,7 @@ import shop.jarviis.oracle.customer.service.CustomerService;
 @RequestMapping("/customers")
 public class CustomerController {
 	@Autowired CustomerService customerService;
+	@Autowired CustomerDTO customerDTO;
 	@RequestMapping("/customers")
 	public void findAll() {
 		List<CustomerDTO> list = customerService.findAll();
@@ -50,11 +53,24 @@ public class CustomerController {
 	}
 	
 	
-	@RequestMapping("/join")
-	public String join() {
-		return "회원가입 성공";
+	@RequestMapping(value="/join", method= {RequestMethod.POST})
+	public String join(@RequestParam("custId") int custId,
+			@RequestParam("custName") String custName,
+			@RequestParam("address") String address,
+			@RequestParam("phone") String phone) {
+		System.out.println("custId: "+ custId );
+		System.out.println("custName: "+ custName );
+		System.out.println("address: "+ address );
+		System.out.println("phone: "+ phone );
+		customerDTO.setCustId(custId);
+		customerDTO.setCustName(custName);
+		customerDTO.setAddress(address);
+		customerDTO.setPhone(phone);
+		customerService.save(customerDTO);
+
+		return "/user/Login";
 	}
-	@RequestMapping("/login")
+	@RequestMapping(value="/login", method= {RequestMethod.POST})
 	public String login() {
 		return "로그인 성공";
 	}

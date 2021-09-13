@@ -58,4 +58,9 @@
 		order_date orderDate
 	from orders where order_date like '%' || #{value} || '%' 
 	</select>
+	<insert id="save" parameterType="shop.jarviis.oracle.order.domain.OrderDTO">
+	insert into
+		orders (order_id, cust_id, book_id, order_price, order_date)
+		values (${orderId}, ${custId}, ${bookId}, ${orderPrice}, #{orderDate})
+	</insert>
 </mapper>

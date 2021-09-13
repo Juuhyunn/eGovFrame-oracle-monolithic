@@ -13,6 +13,7 @@ public interface PublisherService {
 	public List<PublisherDTO> findByPubName(String pubName);
 	public List<PublisherDTO> findByMgrName(String mgrName);
 	public List<PublisherDTO> findByPhone(String phone);
+	public void save(PublisherDTO publisherDTO);
 	
 
 }

@@ -36,5 +36,10 @@ public class CustomerServiceImpl implements CustomerService{
 		// TODO Auto-generated method stub
 		return customerMapper.findByPhone(phone);
 	}
+	@Override
+	public void save(CustomerDTO customerDTO) {
+		customerMapper.save(customerDTO);
+		
+	}
 
 }
