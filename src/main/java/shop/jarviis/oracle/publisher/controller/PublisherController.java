@@ -17,33 +17,33 @@ import shop.jarviis.oracle.publisher.service.PublisherService;
 public class PublisherController {
 	@Autowired PublisherService publisherService;
 	@Autowired PublisherDTO publisherDTO;
-	@GetMapping("/pubs")
+	@GetMapping("/")
 	public void findAll() {
 		List<PublisherDTO> list = publisherService.findAll();
 		for(PublisherDTO p : list) {
 			System.out.println(p.toString());
 		}
 	}
-	@GetMapping("/pubs/pubId/{pubId}")
+	@GetMapping("/pubId/{pubId}")
 	public void findById(@PathVariable int pubId) {
 		PublisherDTO publisherDTO = publisherService.findById(pubId);
 		System.out.println(publisherDTO.toString());
 	}
-	@GetMapping("/pubs/pubName/{pubName}")
+	@GetMapping("/pubName/{pubName}")
 	public void findByPubName(@PathVariable String pubName) {
 		List<PublisherDTO> list = publisherService.findByPubName(pubName);
 		for (PublisherDTO p : list) {
 			System.out.println(p.toString());
 		}
 	}
-	@GetMapping("/pubs/mgrName/{mgrName}")
+	@GetMapping("/mgrName/{mgrName}")
 	public void findByMgrName(@PathVariable String mgrName) {
 		List<PublisherDTO> list = publisherService.findByMgrName(mgrName);
 		for(PublisherDTO p : list) {
 			System.out.println(p.toString());
 		}
 	}
-	@GetMapping("/pubs/phone/{phone}")
+	@GetMapping("/phone/{phone}")
 	public void findByPhone(@PathVariable String phone) {
 		List<PublisherDTO> list = publisherService.findByPhone(phone);
 		for(PublisherDTO p : list) {

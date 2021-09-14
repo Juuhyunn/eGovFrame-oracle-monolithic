@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="shop.jarviis.oracle.mappers.PublisherMapper">
-	<select id="findAll" resultType="shop.jarviis.oracle.publisher.domain.PublisherDTO">
+	<select id="findAll" resultType="publisher">
 	select 
 		pub_id pubId,
 		pub_name pubName,
@@ -9,7 +9,7 @@
 		phone
 		from publishers
 	</select>
-	<select id="findById" resultType="shop.jarviis.oracle.publisher.domain.PublisherDTO" parameterType="int">
+	<select id="findById" resultType="publisher" parameterType="int">
 	select 
 		pub_id pubId,
 		pub_name pubName,
@@ -17,7 +17,7 @@
 		phone
 		from publishers where pub_id like ${pubId}
 	</select>
-	<select id="findByPubName" resultType="shop.jarviis.oracle.publisher.domain.PublisherDTO" parameterType="string">
+	<select id="findByPubName" resultType="publisher" parameterType="string">
 	select 
 		pub_id pubId,
 		pub_name pubName,
@@ -25,7 +25,7 @@
 		phone
 		from publishers where pub_name like '%' || #{value} || '%'
 	</select>
-	<select id="findByMgrName" resultType="shop.jarviis.oracle.publisher.domain.PublisherDTO" parameterType="string">
+	<select id="findByMgrName" resultType="publisher" parameterType="string">
 	select 
 		pub_id pubId,
 		pub_name pubName,
@@ -33,7 +33,7 @@
 		phone
 		from publishers where mgr_name like '%' || #{value} || '%'
 	</select>
-	<select id="findByPhone" resultType="shop.jarviis.oracle.publisher.domain.PublisherDTO" parameterType="string">
+	<select id="findByPhone" resultType="publisher" parameterType="string">
 	select 
 		pub_id pubId,
 		pub_name pubName,
@@ -41,7 +41,7 @@
 		phone
 		from publishers where phone like '%' || #{value} || '%'
 	</select>
-	<insert id="save" parameterType="shop.jarviis.oracle.publisher.domain.PublisherDTO">
+	<insert id="save" parameterType="publisher">
 	insert into
 		publishers(pub_id, pub_name, mgr_name, phone)
 		values (${pubId}, #{pubName}, #{mgrName}, #{phone})

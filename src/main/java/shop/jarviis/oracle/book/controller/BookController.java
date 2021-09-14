@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import lombok.Getter;
 import shop.jarviis.oracle.book.domain.BookDTO;
 import shop.jarviis.oracle.book.service.BookService;
 
@@ -18,34 +17,33 @@ import shop.jarviis.oracle.book.service.BookService;
 public class BookController {
 	@Autowired BookService bookService;
 	@Autowired BookDTO bookDTO;
-	@RequestMapping("/books")	
+	@RequestMapping("/")	
 	public void findAll() {
 		List<BookDTO> list = bookService.findAll();
 		for (BookDTO b : list) {
-			System.out.println(b.toString());
-			
+			System.out.println(b.toString());		
 		}
 	}
-	@RequestMapping("/books/bookId/{bookId}")
+	@RequestMapping("/bookId/{bookId}")
 	public void findById(@PathVariable int bookId) {
 		BookDTO bookDTO = bookService.findById(bookId);
 		System.out.println(bookDTO.toString());
 	}
-	@RequestMapping("/books/pubId/{pubId}")
+	@RequestMapping("/pubId/{pubId}")
 	public void findByPubId(@PathVariable int pubId) {
 		List<BookDTO> list = bookService.findByPubId(pubId);
 		for (BookDTO b : list) {
 			System.out.println(b.toString());
 		}
 	}
-	@RequestMapping("/books/bookTitle/{bookTitle}")
+	@RequestMapping("/bookTitle/{bookTitle}")
 	public void findByBookTitle(@PathVariable String bookTitle) {
 		List<BookDTO> list = bookService.findByBookTitle(bookTitle);
 		for (BookDTO b : list) {
 			System.out.println(b.toString());
 		}
 	}
-	@RequestMapping("/books/price/{price}")
+	@RequestMapping("/price/{price}")
 	public void findByPrice(@PathVariable int price) {
 		List<BookDTO> list = bookService.findByPrice(price);
 		for(BookDTO b : list) {

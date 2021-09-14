@@ -11,35 +11,34 @@ import shop.jarviis.oracle.mappers.CustomerMapper;
 @Service
 public class CustomerServiceImpl implements CustomerService{
 	@Autowired CustomerMapper customerMapper;
+
+	@Override
+	public void save(CustomerDTO t) {
+		// TODO Auto-generated method stub
+		customerMapper.save(t);
+	}
+
+	@Override
+	public CustomerDTO findById(Integer id) {
+		// TODO Auto-generated method stub
+		return customerMapper.findById(id);
+	}
+
 	@Override
 	public List<CustomerDTO> findAll() {
 		// TODO Auto-generated method stub
 		return customerMapper.findAll();
 	}
+
 	@Override
-	public CustomerDTO findById(int custId) {
+	public void update(CustomerDTO t) {
 		// TODO Auto-generated method stub
-		return customerMapper.findById(custId);
-	}
-	@Override
-	public List<CustomerDTO> findByCustName(String custName) {
-		// TODO Auto-generated method stub
-		return customerMapper.findByCustName(custName);
-	}
-	@Override
-	public List<CustomerDTO> findByAddress(String address) {
-		// TODO Auto-generated method stub
-		return customerMapper.findByAddress(address);
-	}
-	@Override
-	public List<CustomerDTO> findByPhone(String phone) {
-		// TODO Auto-generated method stub
-		return customerMapper.findByPhone(phone);
-	}
-	@Override
-	public void save(CustomerDTO customerDTO) {
-		customerMapper.save(customerDTO);
-		
+		customerMapper.update(t);
 	}
 
+	@Override
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+		customerMapper.delete(id);
+	}
 }

@@ -1,16 +1,9 @@
-package shop.jarviis.oracle;
-
-import java.text.DateFormat;
-import java.util.Date;
-import java.util.Locale;
+package shop.jarviis.oracle.common;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -21,9 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @SessionAttributes("contextPath")
 @Controller
 public class HomeController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+		
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -33,20 +24,27 @@ public class HomeController {
 		HttpServletRequest request) { 
 		String contextPath = request.getContextPath();
 		session.setAttribute("contextPath", contextPath);
-		
 		return "index";
 	}
-	@RequestMapping(value = "/joinform", method = RequestMethod.GET)
-	public String join() {
-		
-		
-		return "user/Join";
+	@RequestMapping(value="/custList", method=RequestMethod.GET)
+	public String customerList() {
+		return "user/List";
 	}
-	@RequestMapping(value = "/loginform", method = RequestMethod.GET)
-	public String login() {
-		
-		
-		return "user/Login";
+	@RequestMapping(value="/custDetail", method=RequestMethod.GET)
+	public String customerDetail() {
+		return "user/Detail";
+	}
+	@RequestMapping(value = "/custRegi", method = RequestMethod.GET)
+	public String customerRegister() {		
+		return "user/Register";
+	}
+	@RequestMapping(value = "/custUp", method = RequestMethod.GET)
+	public String customerUpdate() {
+		return "user/Update";
+	}
+	@RequestMapping(value = "/custDel", method = RequestMethod.GET)
+	public String customerDelete() {
+		return "user/Delete";
 	}
 	@RequestMapping(value = "/addPub", method = RequestMethod.GET)
 	public String addPub() {
@@ -60,4 +58,5 @@ public class HomeController {
 	public String addOrder() {
 		return "order/AddOrder";
 	}
+	
 }
