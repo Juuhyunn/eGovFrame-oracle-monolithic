@@ -4,13 +4,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <jsp:include page="../common/head.jsp"/>
-    
-
 <body>
 
-<h2>AddBook Form</h2>
+<h2>책 추가</h2>
 
-<form action="${contextPath}/books/addBook" method="post">
+<form action="${contextPath}/customers/register" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -39,6 +37,14 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+  <div>
+  <button type="button" onclick="location.href='./custDetail'">Detail</button>
+  <button type="button" onclick="location.href='./custList'">List</button>
+  <button type="button" onclick="location.href='./custRegi'">Register</button>
+  <button type="button" onclick="location.href='./custUp'">Update</button>
+  <button type="button" onclick="location.href='./custDel'">Delete</button>
+  <button type="button" onclick="location.href='./custLogin'">Login</button>
+  </div>
 
 </body>
 </html>

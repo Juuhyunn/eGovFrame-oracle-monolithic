@@ -9,7 +9,7 @@
 
 <h2>사용자 상세 (findById)</h2>
 
-<form action="${contextPath}/customers/detail" method="post">
+<form action="${contextPath}/customers/detail">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -18,16 +18,18 @@
     <label for="custId"><b>조회할 사용자 Id</b></label>
     <input type="text" placeholder="Enter custId" name="custId" required>
     <button type="submit">Detail</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
 </form>
+  <div>
+  <button type="button" onclick="location.href='./custDetail'">Detail</button>
+  <button type="button" onclick="location.href='./custList'">List</button>
+  <button type="button" onclick="location.href='./custRegi'">Register</button>
+  <button type="button" onclick="location.href='./custUp'">Update</button>
+  <button type="button" onclick="location.href='./custDel'">Delete</button>
+  <button type="button" onclick="location.href='./custLogin'">Login</button>
+  </div>
 
 </body>
 </html>

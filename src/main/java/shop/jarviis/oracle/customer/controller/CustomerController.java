@@ -5,10 +5,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import shop.jarviis.oracle.customer.domain.CustomerDTO;
 import shop.jarviis.oracle.customer.service.CustomerService;
@@ -22,9 +21,9 @@ public class CustomerController{
 	
 	
 	@RequestMapping("/detail")
-	public void findById(CustomerDTO t) {
+	public void findById(@RequestParam int custId) {
 		
-		System.out.println(customerService.findById(t.getCustId()));
+		System.out.println(customerService.findById(custId).toString());
 	}
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	public void findAll() {
@@ -43,10 +42,10 @@ public class CustomerController{
 		customerService.update(t);
 		System.out.println("Update Complete : " + t);
 	}
-	@RequestMapping("/delete/{id}")
-	public void delete(@PathVariable Integer id) {
-		customerService.delete(id);
-		System.out.println("Delete Complete : " + id);
+	@RequestMapping("/delete")
+	public void delete(@RequestParam int custId) {
+		customerService.delete(custId);
+		System.out.println("Delete Complete : " + custId);
 		
 	}
 	

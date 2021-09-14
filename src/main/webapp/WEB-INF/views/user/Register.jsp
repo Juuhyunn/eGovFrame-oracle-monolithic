@@ -37,6 +37,14 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
+  <div>
+  <button type="button" onclick="location.href='./custDetail'">Detail</button>
+  <button type="button" onclick="location.href='./custList'">List</button>
+  <button type="button" onclick="location.href='./custRegi'">Register</button>
+  <button type="button" onclick="location.href='./custUp'">Update</button>
+  <button type="button" onclick="location.href='./custDel'">Delete</button>
+  <button type="button" onclick="location.href='./custLogin'">Login</button>
+  </div>
 
 </body>
 </html>

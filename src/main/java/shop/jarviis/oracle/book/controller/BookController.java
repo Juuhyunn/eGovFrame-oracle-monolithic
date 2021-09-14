@@ -14,59 +14,36 @@ import shop.jarviis.oracle.book.service.BookService;
 
 @Controller
 @RequestMapping("/books")
-public class BookController {
+public class BookController{
 	@Autowired BookService bookService;
 	@Autowired BookDTO bookDTO;
-	@RequestMapping("/")	
+	@RequestMapping(value="/register", method=RequestMethod.POST)
+	public void save(BookDTO t) {
+		bookService.save(t);
+		System.out.println("Save Complete : " + t.toString());
+	}
+	@RequestMapping(value="/detail")
+	public void findById(@PathVariable Integer custId) {
+		System.out.println(bookService.findById(custId).toString());
+	}
+	@RequestMapping(value="/list", method=RequestMethod.POST)
 	public void findAll() {
 		List<BookDTO> list = bookService.findAll();
-		for (BookDTO b : list) {
-			System.out.println(b.toString());		
-		}
-	}
-	@RequestMapping("/bookId/{bookId}")
-	public void findById(@PathVariable int bookId) {
-		BookDTO bookDTO = bookService.findById(bookId);
-		System.out.println(bookDTO.toString());
-	}
-	@RequestMapping("/pubId/{pubId}")
-	public void findByPubId(@PathVariable int pubId) {
-		List<BookDTO> list = bookService.findByPubId(pubId);
-		for (BookDTO b : list) {
-			System.out.println(b.toString());
-		}
-	}
-	@RequestMapping("/bookTitle/{bookTitle}")
-	public void findByBookTitle(@PathVariable String bookTitle) {
-		List<BookDTO> list = bookService.findByBookTitle(bookTitle);
-		for (BookDTO b : list) {
-			System.out.println(b.toString());
-		}
-	}
-	@RequestMapping("/price/{price}")
-	public void findByPrice(@PathVariable int price) {
-		List<BookDTO> list = bookService.findByPrice(price);
+		System.out.println("****************************************************");
 		for(BookDTO b : list) {
 			System.out.println(b.toString());
 		}
 	}
-	@RequestMapping(value="/addBook", method= {RequestMethod.POST})
-	public String addBook(
-			@RequestParam("bookId") int bookId,
-			@RequestParam("bookTitle") String bookTitle,
-			@RequestParam("price") int price,
-			@RequestParam("pubId") int pubId) {
-		System.out.println("bookId : "+ bookId);
-		System.out.println("bookTitle : "+ bookTitle);
-		System.out.println("price : "+ price);
-		System.out.println("pubId : "+ pubId);
-		bookDTO.setBookId(bookId);
-		bookDTO.setBookTitle(bookTitle);
-		bookDTO.setPrice(price);
-		bookDTO.setPubId(pubId);
-		bookService.save(bookDTO);
-		return "/book/addBook";
+	@RequestMapping(value="/update", method=RequestMethod.POST)
+	public void update(BookDTO t) {
+		bookService.update(t);
+		System.out.println("Update Complete : " + t.toString());
 		
 	}
-
+	@RequestMapping(value="/", method=RequestMethod.GET)
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

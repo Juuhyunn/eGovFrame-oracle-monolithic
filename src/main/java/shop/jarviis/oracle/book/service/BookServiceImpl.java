@@ -10,37 +10,37 @@ import shop.jarviis.oracle.mappers.BookMapper;
 
 @Service
 public class BookServiceImpl implements BookService{
-	@Autowired BookMapper bookMapper; 
+	@Autowired BookMapper bookMapper;
+
 	@Override
-	public List<BookDTO> findAll() {
-		// TODO Auto-generated method stub
-		return bookMapper.findAll();
-	}
-	@Override
-	public BookDTO findById(int bookId) {
-		// TODO Auto-generated method stub
-		return bookMapper.findById(bookId);
-	}
-	@Override
-	public List<BookDTO> findByPubId(int pubId) {
-		// TODO Auto-generated method stub
-		return bookMapper.findByPubId(pubId);
-	}
-	@Override
-	public List<BookDTO> findByBookTitle(String bookTitle) {
-		// TODO Auto-generated method stub
-		return bookMapper.findByBookTitle(bookTitle);
-	}
-	@Override
-	public List<BookDTO> findByPrice(int price) {
-		// TODO Auto-generated method stub
-		return bookMapper.findByPrice(price);
-	}
-	@Override
-	public void save(BookDTO bookDTO) {
-		bookMapper.save(bookDTO);
+	public void save(BookDTO t) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public BookDTO findById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<BookDTO> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void update(BookDTO t) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Integer id) {
+		// TODO Auto-generated method stub
+		
+	} 
+	
 
 }

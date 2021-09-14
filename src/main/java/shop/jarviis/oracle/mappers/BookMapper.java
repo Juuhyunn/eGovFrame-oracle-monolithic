@@ -5,13 +5,9 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import shop.jarviis.oracle.book.domain.BookDTO;
+import shop.jarviis.oracle.common.GenericInterface;
 
 @Repository
-public interface BookMapper {
-	public List<BookDTO> findAll();
-	public BookDTO findById(int bookId);
-	public List<BookDTO> findByPubId(int pubId);
-	public List<BookDTO> findByBookTitle(String bookTitle);
-	public List<BookDTO> findByPrice(int price);
-	public void save(BookDTO bookDTO);
+public interface BookMapper extends GenericInterface<BookDTO, Integer>{
+	
 }

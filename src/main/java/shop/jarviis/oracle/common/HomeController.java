@@ -46,6 +46,10 @@ public class HomeController {
 	public String customerDelete() {
 		return "user/Delete";
 	}
+	@RequestMapping(value = "/custLogin", method = RequestMethod.GET)
+	public String customerLogin() {
+		return "user/Login";
+	}
 	@RequestMapping(value = "/addPub", method = RequestMethod.GET)
 	public String addPub() {
 		return "publisher/AddPub";
