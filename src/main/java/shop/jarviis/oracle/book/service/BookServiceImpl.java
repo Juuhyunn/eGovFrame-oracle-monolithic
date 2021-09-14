@@ -14,32 +14,28 @@ public class BookServiceImpl implements BookService{
 
 	@Override
 	public void save(BookDTO t) {
-		// TODO Auto-generated method stub
-		
+		bookMapper.save(t);
 	}
 
 	@Override
 	public BookDTO findById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return bookMapper.findById(id);
 	}
 
 	@Override
 	public List<BookDTO> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return bookMapper.findAll();
 	}
 
 	@Override
 	public void update(BookDTO t) {
-		// TODO Auto-generated method stub
+		bookMapper.update(t);
 		
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
-		
+		bookMapper.delete(id);
 	} 
 	
 

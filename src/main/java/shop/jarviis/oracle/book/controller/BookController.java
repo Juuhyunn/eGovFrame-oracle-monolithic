@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,16 +19,17 @@ public class BookController{
 	@RequestMapping(value="/register", method=RequestMethod.POST)
 	public void save(BookDTO t) {
 		bookService.save(t);
-		System.out.println("Save Complete : " + t.toString());
+		System.out.println("*****Save Complete : " + t.toString());
 	}
 	@RequestMapping(value="/detail")
-	public void findById(@PathVariable Integer custId) {
-		System.out.println(bookService.findById(custId).toString());
+	public void findById(@RequestParam Integer bookId) {
+		System.out.println("*****USER");
+		System.out.println(bookService.findById(bookId).toString());
 	}
 	@RequestMapping(value="/list", method=RequestMethod.POST)
 	public void findAll() {
 		List<BookDTO> list = bookService.findAll();
-		System.out.println("****************************************************");
+		System.out.println("*****LIST");
 		for(BookDTO b : list) {
 			System.out.println(b.toString());
 		}
@@ -37,13 +37,13 @@ public class BookController{
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public void update(BookDTO t) {
 		bookService.update(t);
-		System.out.println("Update Complete : " + t.toString());
+		System.out.println("*****Update Complete : " + t.toString());
 		
 	}
-	@RequestMapping(value="/", method=RequestMethod.GET)
-	public void delete(Integer id) {
-		// TODO Auto-generated method stub
-		
+	@RequestMapping(value="/delete")
+	public void delete(@RequestParam Integer bookId) {
+		bookService.delete(bookId);
+		System.out.println("*****Delete Complete : " + bookId);	
 	}
 	
 }

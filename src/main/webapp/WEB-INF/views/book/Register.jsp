@@ -8,7 +8,7 @@
 
 <h2>책 추가</h2>
 
-<form action="${contextPath}/customers/register" method="post">
+<form action="${contextPath}/books/register" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -38,12 +38,11 @@
   </div>
 </form>
   <div>
-  <button type="button" onclick="location.href='./custDetail'">Detail</button>
-  <button type="button" onclick="location.href='./custList'">List</button>
-  <button type="button" onclick="location.href='./custRegi'">Register</button>
-  <button type="button" onclick="location.href='./custUp'">Update</button>
-  <button type="button" onclick="location.href='./custDel'">Delete</button>
-  <button type="button" onclick="location.href='./custLogin'">Login</button>
+  <button type="button" onclick="location.href='./bookDetail'">Detail</button>
+  <button type="button" onclick="location.href='./bookList'">List</button>
+  <button type="button" onclick="location.href='./bookRegi'">Register</button>
+  <button type="button" onclick="location.href='./bookUp'">Update</button>
+  <button type="button" onclick="location.href='./bookDel'">Delete</button>
   </div>
 
 </body>

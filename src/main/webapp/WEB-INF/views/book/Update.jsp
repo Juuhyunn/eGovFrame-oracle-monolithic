@@ -7,30 +7,28 @@
 
 <body>
 
-<h2>사용자 수정</h2>
+<h2>책 수정</h2>
 
-<form action="${contextPath}/customers/update" method="post">
+<form action="${contextPath}/books/update" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="custId"><b>수정할 회원 ID</b></label>
-    <input type="text" placeholder="Enter custId" name="custId" required>
+    <label for="bookId"><b>수정할 책 ID</b></label>
+    <input type="text" placeholder="Enter bookId" name="bookId" required>
 
-    <label for="custName"><b>custName</b></label>
-    <input type="text" placeholder="Enter custName" name="custName" required>
+    <label for="bookTitle"><b>bookTitle</b></label>
+    <input type="text" placeholder="Enter bookTitle" name="bookTitle" required>
     
-    <label for="address"><b>address</b></label>
-    <input type="text" placeholder="Enter address" name="address" required>
+    <label for="price"><b>address</b></label>
+    <input type="text" placeholder="Enter price" name="price" required>
 
-    <label for="phone"><b>phone</b></label>
-    <input type="text" placeholder="Enter phone" name="phone" required>
+    <label for="pubId"><b>pubId</b></label>
+    <input type="text" placeholder="Enter pubId" name="pubId" required>
         
     <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
@@ -39,12 +37,11 @@
   </div>
 </form>
   <div>
-  <button type="button" onclick="location.href='./custDetail'">Detail</button>
-  <button type="button" onclick="location.href='./custList'">List</button>
-  <button type="button" onclick="location.href='./custRegi'">Register</button>
-  <button type="button" onclick="location.href='./custUp'">Update</button>
-  <button type="button" onclick="location.href='./custDel'">Delete</button>
-  <button type="button" onclick="location.href='./custLogin'">Login</button>
+  <button type="button" onclick="location.href='./bookDetail'">Detail</button>
+  <button type="button" onclick="location.href='./bookList'">List</button>
+  <button type="button" onclick="location.href='./bookRegi'">Register</button>
+  <button type="button" onclick="location.href='./bookUp'">Update</button>
+  <button type="button" onclick="location.href='./bookDel'">Delete</button>
   </div>
 
 </body>

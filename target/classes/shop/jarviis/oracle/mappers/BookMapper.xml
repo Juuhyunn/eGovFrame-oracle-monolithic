@@ -18,7 +18,7 @@
 			from books where book_id like ${bookId}
 	
 	</select>
-	<select id="findByPubId" resultType="book" parameterType="int">
+<!-- 	<select id="findByPubId" resultType="book" parameterType="int">
 		select 
 			book_id bookId, 
 			book_title bookTitle,
@@ -42,10 +42,23 @@
 			price,
 			pub_id pubId
 			from books where price >= ${price}
-	</select>
+	</select> -->
 	<insert id="save" parameterType="book">
 		insert into
 			books (book_id, book_title, price, pub_id)
 			values (${bookId}, #{bookTitle}, ${price}, ${pubId})
 	</insert>
+	<update id="update" parameterType="book">
+	update
+		books set 
+		book_title = #{bookTitle},
+		price = ${price},
+		pub_id = ${pubId}
+		where book_id like ${bookId}
+	</update>
+	<delete id="delete" parameterType="book">
+	delete
+		from books
+		where book_id like ${bookId}
+	</delete>
 </mapper>

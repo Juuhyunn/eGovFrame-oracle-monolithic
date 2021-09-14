@@ -7,9 +7,9 @@
 
 <body>
 
-<h2>책 목록</h2>
+<h2>주문 목록</h2>
 
-<form action="${contextPath}/books/list " method="post">
+<form action="${contextPath}/orders/list " method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -19,11 +19,11 @@
   </div>
 </form>
   <div>
-  <button type="button" onclick="location.href='./bookDetail'">Detail</button>
-  <button type="button" onclick="location.href='./bookList'">List</button>
-  <button type="button" onclick="location.href='./bookRegi'">Register</button>
-  <button type="button" onclick="location.href='./bookUp'">Update</button>
-  <button type="button" onclick="location.href='./bookDel'">Delete</button>
+  <button type="button" onclick="location.href='./orderDetail'">Detail</button>
+  <button type="button" onclick="location.href='./orderList'">List</button>
+  <button type="button" onclick="location.href='./orderRegi'">Register</button>
+  <button type="button" onclick="location.href='./orderUp'">Update</button>
+  <button type="button" onclick="location.href='./orderDel'">Delete</button>
   </div>
 </body>
 </html>

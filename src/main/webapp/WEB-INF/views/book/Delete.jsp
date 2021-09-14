@@ -7,31 +7,28 @@
 
 <body>
 
-<h2>사용자 삭제</h2>
+<h2>책 삭제</h2>
 
-<form action="${contextPath}/customers/delete">
+<form action="${contextPath}/books/delete">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
 
   <div class="container">
-    <label for="custId"><b>삭제할 회원 ID</b></label>
-    <input type="text" placeholder="Enter custId" name="custId" required>
+    <label for="bookId"><b>삭제할 책 ID</b></label>
+    <input type="text" placeholder="Enter bookId" name="bookId" required>
         
     <button type="submit">Delete</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+
   </div>
 
 </form>
   <div>
-  <button type="button" onclick="location.href='./custDetail'">Detail</button>
-  <button type="button" onclick="location.href='./custList'">List</button>
-  <button type="button" onclick="location.href='./custRegi'">Register</button>
-  <button type="button" onclick="location.href='./custUp'">Update</button>
-  <button type="button" onclick="location.href='./custDel'">Delete</button>
-  <button type="button" onclick="location.href='./custLogin'">Login</button>
+  <button type="button" onclick="location.href='./bookDetail'">Detail</button>
+  <button type="button" onclick="location.href='./bookList'">List</button>
+  <button type="button" onclick="location.href='./bookRegi'">Register</button>
+  <button type="button" onclick="location.href='./bookUp'">Update</button>
+  <button type="button" onclick="location.href='./bookDel'">Delete</button>
   </div>
 
 </body>
