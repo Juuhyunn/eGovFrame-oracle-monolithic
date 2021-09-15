@@ -11,5 +11,6 @@ import shop.jarviis.oracle.customer.domain.CustomerDTO;
 public interface CustomerMapper extends GenericInterface<CustomerDTO, Integer>{
 	List<CustomerDTO> findByCustName(String custName);
 	List<CustomerDTO> findByAddress(String address);
-	List<CustomerDTO> findByPhone(String phone);	
+	List<CustomerDTO> findByPhone(String phone);
+	CustomerDTO login(CustomerDTO t);	
 }

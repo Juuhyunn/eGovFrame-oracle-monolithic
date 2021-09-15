@@ -56,4 +56,9 @@ public class CustomerServiceImpl implements CustomerService{
 	public List<CustomerDTO> findByPhone(String phone) {
 		return customerMapper.findByPhone(phone);
 	}
+
+	@Override
+	public CustomerDTO login(CustomerDTO t) {
+		return customerMapper.login(t);
+	}
 }

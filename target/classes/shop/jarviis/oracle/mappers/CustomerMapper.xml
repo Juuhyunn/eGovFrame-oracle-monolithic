@@ -63,5 +63,14 @@
 		from customers
 		where cust_id like ${custId}
 	</delete>
+	<select id="login" resultType="customer" parameterType="customer">
+	select 
+	    cust_id custId,
+	    cust_name custName,
+	    address,
+	    phone
+	from customers where cust_id like ${custId} and cust_name like #{custName}
+	
+	</select>
 
 </mapper>
