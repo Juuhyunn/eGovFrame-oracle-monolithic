@@ -4,7 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <jsp:include page="../common/head.jsp"/>
-
+<%-- <%= application.getContextPath() %> --%>
 <body>
 
 <h2>주문 삭제</h2>

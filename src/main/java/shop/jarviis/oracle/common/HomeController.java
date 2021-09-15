@@ -60,4 +60,15 @@ public class HomeController {
 	public String orderUpdate() {return "order/Update";}
 	@RequestMapping(value = "/orderDel", method = RequestMethod.GET)
 	public String orderDelete() {return "order/Delete";}
+	
+	@RequestMapping(value = "/pubList", method = RequestMethod.GET)
+	public String pubList() {return "publisher/List";}
+	@RequestMapping(value = "pubDetail", method = RequestMethod.GET)
+	public String pubDetail() {return "publisher/Detail";}
+	@RequestMapping(value = "/pubRegi", method = RequestMethod.GET)
+	public String pubRegister() {return "publisher/Register";}
+	@RequestMapping(value = "/pubUp", method = RequestMethod.GET)
+	public String pubUpdate() {return "publisher/Update";}
+	@RequestMapping(value = "/pubDel", method = RequestMethod.GET)
+	public String pubDelete() {return "publisher/Delete";}
 }

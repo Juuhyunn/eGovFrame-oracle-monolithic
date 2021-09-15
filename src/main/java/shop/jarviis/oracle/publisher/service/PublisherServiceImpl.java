@@ -1,5 +1,6 @@
 package shop.jarviis.oracle.publisher.service;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,39 +14,28 @@ public class PublisherServiceImpl implements PublisherService{
 	@Autowired PublisherMapper publisherMapper;
 
 	@Override
+	public void save(PublisherDTO t) {
+		publisherMapper.save(t);
+	}
+
+	@Override
+	public PublisherDTO findById(Integer id) {
+		return publisherMapper.findById(id);
+	}
+
+	@Override
 	public List<PublisherDTO> findAll() {
-		// TODO Auto-generated method stub
 		return publisherMapper.findAll();
 	}
 
 	@Override
-	public PublisherDTO findById(int pubId) {
-		// TODO Auto-generated method stub
-		return publisherMapper.findById(pubId);
+	public void update(PublisherDTO t) {
+		publisherMapper.update(t);
 	}
 
 	@Override
-	public List<PublisherDTO> findByPubName(String pubName) {
-		// TODO Auto-generated method stub
-		return publisherMapper.findByPubName(pubName);
-	}
-
-	@Override
-	public List<PublisherDTO> findByMgrName(String mgrName) {
-		// TODO Auto-generated method stub
-		return publisherMapper.findByMgrName(mgrName);
-	}
-
-	@Override
-	public List<PublisherDTO> findByPhone(String phone) {
-		// TODO Auto-generated method stub
-		return publisherMapper.findByPhone(phone);
-	}
-
-	@Override
-	public void save(PublisherDTO publisherDTO) {
-		// TODO Auto-generated method stub
-		publisherMapper.save(publisherDTO);
+	public void delete(Integer id) {
+		publisherMapper.delete(id);
 	}
 
 }
