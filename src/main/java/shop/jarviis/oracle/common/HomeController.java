@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
@@ -26,49 +27,8 @@ public class HomeController {
 		session.setAttribute("contextPath", contextPath);
 		return "index";
 	}
-	@RequestMapping(value="/custList", method=RequestMethod.GET)
-	public String customerList() {return "user/List";}
-	@RequestMapping(value="/custDetail", method=RequestMethod.GET)
-	public String customerDetail() {return "user/Detail";}
-	@RequestMapping(value = "/custRegi", method = RequestMethod.GET)
-	public String customerRegister() {return "user/Register";}
-	@RequestMapping(value = "/custUp", method = RequestMethod.GET)
-	public String customerUpdate() {return "user/Update";}
-	@RequestMapping(value = "/custDel", method = RequestMethod.GET)
-	public String customerDelete() {return "user/Delete";}
-	@RequestMapping(value = "/custLogin", method = RequestMethod.GET)
-	public String customerLogin() {return "user/Login";}
-	
-	@RequestMapping(value = "/bookList", method = RequestMethod.GET)
-	public String bookList() {return "book/List";}
-	@RequestMapping(value = "/bookDetail", method = RequestMethod.GET)
-	public String bookDetail() {return "book/Detail";}
-	@RequestMapping(value = "/bookRegi", method = RequestMethod.GET)
-	public String bookRegister() {return "book/Register";}
-	@RequestMapping(value = "/bookUp", method = RequestMethod.GET)
-	public String bookUpdate() {return "book/Update";}
-	@RequestMapping(value = "/bookDel", method = RequestMethod.GET)
-	public String bookDelete() {return "book/Delete";}
-	
-	@RequestMapping(value = "/orderList", method = RequestMethod.GET)
-	public String orderList() {return "order/List";}
-	@RequestMapping(value = "orderDetail", method = RequestMethod.GET)
-	public String orderDetail() {return "order/Detail";}
-	@RequestMapping(value = "/orderRegi", method = RequestMethod.GET)
-	public String orderRegister() {return "order/Register";}
-	@RequestMapping(value = "/orderUp", method = RequestMethod.GET)
-	public String orderUpdate() {return "order/Update";}
-	@RequestMapping(value = "/orderDel", method = RequestMethod.GET)
-	public String orderDelete() {return "order/Delete";}
-	
-	@RequestMapping(value = "/pubList", method = RequestMethod.GET)
-	public String pubList() {return "publisher/List";}
-	@RequestMapping(value = "pubDetail", method = RequestMethod.GET)
-	public String pubDetail() {return "publisher/Detail";}
-	@RequestMapping(value = "/pubRegi", method = RequestMethod.GET)
-	public String pubRegister() {return "publisher/Register";}
-	@RequestMapping(value = "/pubUp", method = RequestMethod.GET)
-	public String pubUpdate() {return "publisher/Update";}
-	@RequestMapping(value = "/pubDel", method = RequestMethod.GET)
-	public String pubDelete() {return "publisher/Delete";}
+	@RequestMapping("/move/{dir}/{jsp}")
+	public String mapping(@PathVariable String dir, @PathVariable String jsp) {
+		return dir + "/" + jsp;
+	}
 }

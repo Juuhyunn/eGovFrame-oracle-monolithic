@@ -1,14 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<c:set var="ctx" value="<%= application.getContextPath() %>"/>    
+    
+
 <jsp:include page="../common/head.jsp"/>
 <body>
 
 <h2>Login</h2>
 
-<form action="<%= application.getContextPath() %>/customers/login " method="post">
+<form action="${ctx}/customers/login " method="post">
 
   <div class="container">
     <label for="custId"><b>custId</b></label>
@@ -25,14 +26,11 @@
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
 </form>
-  <div>
-  <button type="button" onclick="location.href='./custDetail'">Detail</button>
-  <button type="button" onclick="location.href='./custList'">List</button>
-  <button type="button" onclick="location.href='./custRegi'">Register</button>
-  <button type="button" onclick="location.href='./custUp'">Update</button>
-  <button type="button" onclick="location.href='./custDel'">Delete</button>
-  <button type="button" onclick="location.href='./custLogin'">Login</button>
+<form action="${ctx}/oracle">
+  <div class="container">  
+    <button type="submit">Go~!</button>
   </div>
+</form>
 
 </body>
 </html>

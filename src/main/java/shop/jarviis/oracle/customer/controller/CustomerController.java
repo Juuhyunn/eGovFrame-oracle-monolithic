@@ -19,62 +19,64 @@ public class CustomerController {
 	@Autowired
 	CustomerDTO customerDTO;
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public void findAll() {
+	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	public String findAll() {
 		this.forPrint(customerService.findAll());
+		return "redirect:/user/List";
 	}
-
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-	public void save(CustomerDTO t) {
+	public String save(CustomerDTO t) {
 		customerService.save(t);
 		System.out.println(t.toString());
+		return "redirect:/user/List";
 	}
-
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public void update(CustomerDTO t) {
+	public String update(CustomerDTO t) {
 		customerService.update(t);
 		System.out.println("Update Complete : " + t);
+		return "redirect:/user/List";
 	}
-
 	@RequestMapping("/delete")
-	public void delete(@RequestParam int custId) {
+	public String delete(@RequestParam int custId) {
 		customerService.delete(custId);
 		System.out.println("Delete Complete : " + custId);
+		return "redirect:/user/List";
 	}
-
-	@RequestMapping("/detail/custId")
-	public void findById(@RequestParam int custId) {
+	@RequestMapping("/detail")
+	public String findById(@RequestParam int custId) {
 		System.out.println(customerService.findById(custId).toString());
+		return "redirect:/user/List";
+	}
+	@RequestMapping("/list/custName")
+	public String findByCustName(@RequestParam String custName) {
+		forPrint(customerService.findByCustName(custName));
+		return "redirect:/user/List";
+	}
+	@RequestMapping("/list/address")
+	public String findByAddress(@RequestParam String address) {
+		forPrint(customerService.findByAddress(address));
+		return "redirect:/user/List";
 	}
 
-	@RequestMapping("/detail/custName")
-	public List<CustomerDTO> findByCustName(@RequestParam String custName) {
-		List<CustomerDTO> list = customerService.findByCustName(custName);
-		this.forPrint(list);
-		return list;
+	@RequestMapping("/list/phone")
+	public String findByPhone(@RequestParam String phone) {
+		forPrint(customerService.findByPhone(phone));
+		return "redirect:/user/List";
 	}
 
-	@RequestMapping("/detail/address")
-	public void findByAddress(@RequestParam String address) {
-		this.forPrint(customerService.findByAddress(address));
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String login(CustomerDTO t) {
+		String check = (customerService.login(t)) == null?"******Login FAIL*****":"******Login Success*****";
+		System.out.println(check);
+		return "redirect:/user/List";
+		
 	}
-
-	@RequestMapping("/detail/phone")
-	public void findByPhone(@RequestParam String phone) {
-		this.forPrint(customerService.findByPhone(phone));
-	}
-
-	public void forPrint(List<CustomerDTO> list) {
+	public List<CustomerDTO> forPrint(List<CustomerDTO> list) {
 		System.out.println("*****Select Complete : ");
 		for (CustomerDTO c : list) {
 			System.out.println(c.toString());
 		}
-	}
-
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public void login(CustomerDTO t) {
-		String check = (customerService.login(t)) == null?"******Login FAIL*****":"******Login Success*****";
-		System.out.println(check);
+		return list;
 	}
 
 }
