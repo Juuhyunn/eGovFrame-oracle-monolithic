@@ -8,7 +8,7 @@
 
 <h2>책 추가</h2>
 
-<form action="${contextPath}/books/register" method="post">
+<form action="<%= application.getContextPath() %>/books/register" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

@@ -41,4 +41,19 @@ public class CustomerServiceImpl implements CustomerService{
 		// TODO Auto-generated method stub
 		customerMapper.delete(id);
 	}
+
+	@Override
+	public List<CustomerDTO> findByCustName(String custName) {
+		return customerMapper.findByCustName(custName);
+	}
+
+	@Override
+	public List<CustomerDTO> findByAddress(String address) {
+		return customerMapper.findByAddress(address);
+	}
+
+	@Override
+	public List<CustomerDTO> findByPhone(String phone) {
+		return customerMapper.findByPhone(phone);
+	}
 }

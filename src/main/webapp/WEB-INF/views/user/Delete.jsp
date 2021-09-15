@@ -9,7 +9,7 @@
 
 <h2>사용자 삭제</h2>
 
-<form action="${contextPath}/customers/delete">
+<form action="<%= application.getContextPath() %>/customers/delete">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

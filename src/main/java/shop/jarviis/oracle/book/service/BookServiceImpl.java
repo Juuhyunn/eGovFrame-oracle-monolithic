@@ -36,6 +36,21 @@ public class BookServiceImpl implements BookService{
 	@Override
 	public void delete(Integer id) {
 		bookMapper.delete(id);
+	}
+
+	@Override
+	public List<BookDTO> findByBookTitle(String bookTitle) {
+		return bookMapper.findByBookTitle(bookTitle);
+	}
+
+	@Override
+	public List<BookDTO> findByPrice(int price) {
+		return bookMapper.findByPrice(price);
+	}
+
+	@Override
+	public List<BookDTO> findByPubId(int pubId) {
+		return bookMapper.findByPubId(pubId);
 	} 
 	
 

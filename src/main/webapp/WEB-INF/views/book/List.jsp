@@ -9,7 +9,7 @@
 
 <h2>책 목록</h2>
 
-<form action="${contextPath}/books/list " method="post">
+<form action="<%= application.getContextPath() %>/books/list " method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

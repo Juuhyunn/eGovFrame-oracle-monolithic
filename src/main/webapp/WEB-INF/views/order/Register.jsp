@@ -8,7 +8,7 @@
 
 <h2>주문 추가</h2>
 
-<form action="${contextPath}/orders/register" method="post">
+<form action="<%= application.getContextPath() %>/orders/register " method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

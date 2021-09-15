@@ -18,19 +18,9 @@ import shop.jarviis.oracle.customer.service.CustomerService;
 public class CustomerController{
 	@Autowired CustomerService customerService;
 	@Autowired CustomerDTO customerDTO;
-	
-	
-	@RequestMapping("/detail")
-	public void findById(@RequestParam int custId) {
-		
-		System.out.println(customerService.findById(custId).toString());
-	}
 	@RequestMapping(value="/", method=RequestMethod.POST)
 	public void findAll() {
-		List<CustomerDTO> list = customerService.findAll();
-		for(CustomerDTO c : list) {
-			System.out.println(c.toString());
-		}	
+		this.forPrint(customerService.findAll());	
 	}
 	@RequestMapping(value="/register", method = RequestMethod.POST)
 	public void save(CustomerDTO t) {
@@ -45,9 +35,32 @@ public class CustomerController{
 	@RequestMapping("/delete")
 	public void delete(@RequestParam int custId) {
 		customerService.delete(custId);
-		System.out.println("Delete Complete : " + custId);
-		
+		System.out.println("Delete Complete : " + custId);		
 	}
+	@RequestMapping("/detail/custId")
+	public void findById(@RequestParam int custId) {		
+		System.out.println(customerService.findById(custId).toString());
+	}
+	@RequestMapping("/detail/custName")
+	public void findByCustName(@RequestParam String custName) {
+		this.forPrint(customerService.findByCustName(custName));
+	}
+	@RequestMapping("/detail/address")
+	public void findByAddress(@RequestParam String address) {	
+		this.forPrint(customerService.findByAddress(address));
+	}
+	@RequestMapping("/detail/phone")
+	public void findByPhone(@RequestParam String phone) {
+		this.forPrint(customerService.findByPhone(phone));
+	}
+	public void forPrint(List<CustomerDTO> list) {
+		System.out.println("*****Select Complete : ");
+		for(CustomerDTO c : list) {
+			System.out.println(c.toString());
+		}
+	}
+	
+	
 	
 
 }

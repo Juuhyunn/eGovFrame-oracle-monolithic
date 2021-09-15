@@ -9,7 +9,7 @@
 
 <h2>사용자 목록</h2>
 
-<form action="${contextPath}/customers/ " method="post">
+<form action="<%= application.getContextPath() %>/customers/ " method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

@@ -8,7 +8,7 @@
 
 <h2>사용자 추가(회원가입)</h2>
 
-<form action="${contextPath}/customers/register" method="post">
+<form action="<%= application.getContextPath() %>/customers/register" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

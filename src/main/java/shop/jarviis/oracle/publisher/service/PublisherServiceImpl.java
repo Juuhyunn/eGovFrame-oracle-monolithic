@@ -38,4 +38,19 @@ public class PublisherServiceImpl implements PublisherService{
 		publisherMapper.delete(id);
 	}
 
+	@Override
+	public List<PublisherDTO> findByPubName(String pubName) {
+		return publisherMapper.findByPubName(pubName);
+	}
+
+	@Override
+	public List<PublisherDTO> findByMgrName(String mgrName) {
+		return publisherMapper.findByMgrName(mgrName);
+	}
+
+	@Override
+	public List<PublisherDTO> findByPhone(String phone) {
+		return publisherMapper.findByPhone(phone);
+	}
+
 }

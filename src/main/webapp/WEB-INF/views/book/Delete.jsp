@@ -9,7 +9,7 @@
 
 <h2>책 삭제</h2>
 
-<form action="${contextPath}/books/delete">
+<form action="<%= application.getContextPath() %>/books/delete">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

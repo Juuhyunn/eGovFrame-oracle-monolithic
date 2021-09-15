@@ -2,6 +2,8 @@ package shop.jarviis.oracle.order.cotroller;
 
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +54,32 @@ public class OrderController {
 		orderService.delete(orderId);
 		System.out.println("*****Delete Complete : " + orderId);
 
+	}
+	@RequestMapping("/detail/orderId")
+	public void findById(@RequestParam int orderId) {		
+		System.out.println(orderService.findById(orderId).toString());
+	}
+	@RequestMapping("/detail/custId")
+	public void findByCustId(@RequestParam int custId) {
+		this.forPrint(orderService.findByCustId(custId));
+	}
+	@RequestMapping("/detail/bookId")
+	public void findByBookId(@RequestParam int bookId) {	
+		this.forPrint(orderService.findByBookId(bookId));
+	}
+	@RequestMapping("/detail/orderPrice")
+	public void findByOrderPrice(@RequestParam int orderPrice) {
+		this.forPrint(orderService.findByOrderPrice(orderPrice));
+	}
+	@RequestMapping("/detail/orderDate")
+	public void findByOrderDate(@RequestParam String orderDate) {
+		this.forPrint(orderService.findByOrderDate(orderDate));
+	}
+	public void forPrint(List<OrderDTO> list) {
+		System.out.println("*****Select Complete : ");
+		for(OrderDTO o : list) {
+			System.out.println(o.toString());
+		}
 	}
 
 }

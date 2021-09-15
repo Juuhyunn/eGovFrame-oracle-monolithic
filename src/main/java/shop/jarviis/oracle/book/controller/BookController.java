@@ -21,18 +21,9 @@ public class BookController{
 		bookService.save(t);
 		System.out.println("*****Save Complete : " + t.toString());
 	}
-	@RequestMapping(value="/detail")
-	public void findById(@RequestParam Integer bookId) {
-		System.out.println("*****USER");
-		System.out.println(bookService.findById(bookId).toString());
-	}
 	@RequestMapping(value="/list", method=RequestMethod.POST)
 	public void findAll() {
-		List<BookDTO> list = bookService.findAll();
-		System.out.println("*****LIST");
-		for(BookDTO b : list) {
-			System.out.println(b.toString());
-		}
+		this.forPrint(bookService.findAll());
 	}
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public void update(BookDTO t) {
@@ -44,6 +35,28 @@ public class BookController{
 	public void delete(@RequestParam Integer bookId) {
 		bookService.delete(bookId);
 		System.out.println("*****Delete Complete : " + bookId);	
+	}
+	@RequestMapping("/detail/bookId")
+	public void findById(@RequestParam int bookId) {		
+		System.out.println(bookService.findById(bookId).toString());
+	}
+	@RequestMapping("/detail/bookTitle")
+	public void findByCustName(@RequestParam String bookTitle) {
+		this.forPrint(bookService.findByBookTitle(bookTitle));
+	}
+	@RequestMapping("/detail/price")
+	public void findByAddress(@RequestParam int price) {	
+		this.forPrint(bookService.findByPrice(price));
+	}
+	@RequestMapping("/detail/pubId")
+	public void findByPhone(@RequestParam int pubId) {
+		this.forPrint(bookService.findByPubId(pubId));
+	}
+	public void forPrint(List<BookDTO> list) {
+		System.out.println("*****Select Complete : ");
+		for(BookDTO b : list) {
+			System.out.println(b.toString());
+		}
 	}
 	
 }

@@ -20,7 +20,7 @@
 	from orders where order_id like ${orderId}
 	
 	</select>
-	<!-- <select id="findByCustId" resultType="order" parameterType="int">
+	<select id="findByCustId" resultType="order" parameterType="int">
 	select
 		order_id orderId,
 		cust_id custId,
@@ -56,8 +56,8 @@
 		book_id bookId,
 		order_price orderPrice,
 		order_date orderDate
-	from orders where order_date like '%' || #{value} || '%' 
-	</select> -->
+	from orders where order_date like '%' || #{orderDate} || '%' 
+	</select>
 	<insert id="save" parameterType="order">
 	insert into
 		orders (order_id, cust_id, book_id, order_price, order_date)

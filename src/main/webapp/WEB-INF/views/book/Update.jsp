@@ -9,7 +9,7 @@
 
 <h2>책 수정</h2>
 
-<form action="${contextPath}/books/update" method="post">
+<form action="<%= application.getContextPath() %>/books/update" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -21,7 +21,7 @@
     <label for="bookTitle"><b>bookTitle</b></label>
     <input type="text" placeholder="Enter bookTitle" name="bookTitle" required>
     
-    <label for="price"><b>address</b></label>
+    <label for="price"><b>price</b></label>
     <input type="text" placeholder="Enter price" name="price" required>
 
     <label for="pubId"><b>pubId</b></label>

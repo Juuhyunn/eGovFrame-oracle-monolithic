@@ -9,7 +9,7 @@
 
 <h2>책 상세 (findById)</h2>
 
-<form action="${contextPath}/books/detail">
+<form action="<%= application.getContextPath() %>/books/detail/bookId">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>
@@ -20,7 +20,31 @@
     <button type="submit">Detail</button>
   </div>
 
-</form>
+</form><hr/>
+<form action="<%= application.getContextPath() %>/books/detail/bookTitle">
+<h3>bookTitle으로 찾기</h3>
+  <div class="container">
+    <label for="bookTitle"><b>조회할 bookTitle</b></label>
+    <input type="text" placeholder="Enter bookTitle" name="bookTitle" required>
+    <button type="submit">Detail</button>
+  </div>
+</form><hr/>
+<form action="<%= application.getContextPath() %>/books/detail/price">
+<h3>price로 찾기</h3>
+  <div class="container">
+    <label for="price"><b>조회할 책 price</b></label>
+    <input type="text" placeholder="Enter price" name="price" required>
+    <button type="submit">Detail</button>
+  </div>
+</form><hr/>
+<form action="<%= application.getContextPath() %>/books/detail/pubId">
+<h3>pubId로 찾기</h3>
+  <div class="container">
+    <label for="pubId"><b>조회할 책 pubId</b></label>
+    <input type="text" placeholder="Enter pubId" name="pubId" required>
+    <button type="submit">Detail</button>
+  </div>
+</form><hr/>
   <div>
   <button type="button" onclick="location.href='./bookDetail'">Detail</button>
   <button type="button" onclick="location.href='./bookList'">List</button>

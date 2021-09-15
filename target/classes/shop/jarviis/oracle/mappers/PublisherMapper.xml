@@ -17,7 +17,7 @@
 		phone
 		from publishers where pub_id like ${pubId}
 	</select>
-	<!-- <select id="findByPubName" resultType="publisher" parameterType="string">
+	<select id="findByPubName" resultType="publisher" parameterType="string">
 	select 
 		pub_id pubId,
 		pub_name pubName,
@@ -40,7 +40,7 @@
 		mgr_name mgrName,
 		phone
 		from publishers where phone like '%' || #{value} || '%'
-	</select> -->
+	</select>
 	<insert id="save" parameterType="publisher">
 	insert into
 		publishers(pub_id, pub_name, mgr_name, phone)

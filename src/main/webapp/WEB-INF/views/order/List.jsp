@@ -9,7 +9,7 @@
 
 <h2>주문 목록</h2>
 
-<form action="${contextPath}/orders/list " method="post">
+<form action="<%= application.getContextPath() %>/orders/list " method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

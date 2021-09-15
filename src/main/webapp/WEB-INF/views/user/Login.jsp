@@ -8,7 +8,7 @@
 
 <h2>로그인</h2>
 
-<form action="${contextPath}/customers/login " method="post">
+<form action="<%= application.getContextPath() %>/customers/login " method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
   </div>

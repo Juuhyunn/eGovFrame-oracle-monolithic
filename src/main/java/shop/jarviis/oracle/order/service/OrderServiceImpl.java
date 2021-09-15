@@ -38,6 +38,26 @@ public class OrderServiceImpl implements OrderService{
 		
 	}
 
+	@Override
+	public List<OrderDTO> findByCustId(int custId) {
+		return orderMapper.findByCustId(custId);
+	}
+
+	@Override
+	public List<OrderDTO> findByOrderPrice(int orderPrice) {
+		return orderMapper.findByOrderPrice(orderPrice);
+	}
+
+	@Override
+	public List<OrderDTO> findByBookId(int bookId) {
+		return orderMapper.findByBookId(bookId);
+	}
+
+	@Override
+	public List<OrderDTO> findByOrderDate(String orderDate) {
+		return orderMapper.findByOrderDate(orderDate);
+	}
+
 	
 
 }

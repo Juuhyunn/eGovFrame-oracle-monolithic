@@ -20,18 +20,9 @@ public class PublisherController{
 		publisherService.save(t);
 		System.out.println("*****Save Complete : " + t.toString());
 	}
-	@RequestMapping(value="/detail")
-	public void findById(@RequestParam Integer pubId) {
-		publisherService.findById(pubId);
-		System.out.println("*****Detail : " + publisherService.findById(pubId).toString());
-	}
 	@RequestMapping(value="/list")
 	public void findAll() {
-		List<PublisherDTO> list = publisherService.findAll();
-		System.out.println("*****List : ");
-		for(PublisherDTO p : list) {
-			System.out.println(p.toString());
-		}
+		this.forPrint(publisherService.findAll());
 	}
 	@RequestMapping(value="/update")
 	public void update(PublisherDTO t) {
@@ -44,6 +35,28 @@ public class PublisherController{
 		publisherService.delete(pubId);
 		System.out.println("*****Delete Complete : " + pubId);
 		
+	}
+	@RequestMapping("/detail/pubId")
+	public void findById(@RequestParam int pubId) {		
+		System.out.println(publisherService.findById(pubId).toString());
+	}
+	@RequestMapping("/detail/pubName")
+	public void findByPubName(@RequestParam String pubName) {
+		this.forPrint(publisherService.findByPubName(pubName));
+	}
+	@RequestMapping("/detail/mgrName")
+	public void findByMgrName(@RequestParam String mgrName) {	
+		this.forPrint(publisherService.findByMgrName(mgrName));
+	}
+	@RequestMapping("/detail/phone")
+	public void findByPhone(@RequestParam String phone) {
+		this.forPrint(publisherService.findByPhone(phone));
+	}
+	public void forPrint(List<PublisherDTO> list) {
+		System.out.println("*****Select Complete : ");
+		for(PublisherDTO p : list) {
+			System.out.println(p.toString());
+		}
 	}
 
 }
