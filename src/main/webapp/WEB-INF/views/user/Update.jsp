@@ -31,7 +31,7 @@
   </div>
 </form>
 <h2>처음으로</h2>
-<form action="${ctx}/oracle">
+<form action="${ctx}">
   <div class="container">  
     <button type="submit">Go~!</button>
   </div>

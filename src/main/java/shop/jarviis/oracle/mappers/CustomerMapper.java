@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import shop.jarviis.oracle.common.GenericInterface;
-import shop.jarviis.oracle.customer.domain.CustomerDTO;
+import shop.jarviis.oracle.customer.model.CustomerDTO;
 
 @Repository
 public interface CustomerMapper extends GenericInterface<CustomerDTO, Integer>{

@@ -38,7 +38,7 @@
     <button type="submit">Detail</button>
   </div>
 </form>
-<form action="${ctx}/oracle">
+<form action="${ctx}">
   <div class="container">  
     <button type="submit">Go~!</button>
   </div>
